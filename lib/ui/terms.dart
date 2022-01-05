@@ -9,6 +9,9 @@ class Terms extends StatefulWidget {
 }
 
 class _TermsState extends State<Terms> {
+  bool _termChecked = false;
+  bool _infoChecked = false;
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -37,6 +40,22 @@ class _TermsState extends State<Terms> {
                       height: 30,
                     ),
                     MyWebView(),
+                    SizedBox(
+                      height: 10,
+                    ),
+                    Theme(
+                      data: ThemeData(
+                        primarySwatch: Colors.grey,
+                        unselectedWidgetColor: Colors.white,
+                      ), // Your color,
+                      child: Checkbox(
+                          value: _termChecked,
+                          onChanged: (value) {
+                            setState(() {
+                              _termChecked = value!;
+                            });
+                          }),
+                    ),
                   ],
                 ),
               ),
@@ -59,6 +78,22 @@ class _TermsState extends State<Terms> {
                       height: 30,
                     ),
                     MyWebView(),
+                    SizedBox(
+                      height: 10,
+                    ),
+                    Theme(
+                      data: ThemeData(
+                        primarySwatch: Colors.grey,
+                        unselectedWidgetColor: Colors.white,
+                      ), // Your color,
+                      child: Checkbox(
+                          value: _infoChecked,
+                          onChanged: (value) {
+                            setState(() {
+                              _infoChecked = value!;
+                            });
+                          }),
+                    ),
                   ],
                 ),
               ),
