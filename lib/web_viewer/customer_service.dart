@@ -15,7 +15,6 @@ class _CustomerServiceState extends State<CustomerService> {
       appBar: AppBar(),
       backgroundColor: const Color(0xff222222),
       body: Container(
-        margin: const EdgeInsets.all(20.0),
         child: Builder(builder: (BuildContext context) {
           return const CcWebView();
         }),

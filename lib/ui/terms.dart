@@ -11,11 +11,19 @@ class Terms extends StatefulWidget {
 class _TermsState extends State<Terms> {
   bool _termChecked = false;
   bool _infoChecked = false;
+  bool _allChecked = false;
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(),
+      appBar: AppBar(
+        actions: [
+          GestureDetector(
+            onTap: () {},
+            child: Icon(Icons.blur_on),
+          )
+        ],
+      ),
       backgroundColor: const Color(0xff222222),
       body: Column(
         children: [
@@ -34,7 +42,7 @@ class _TermsState extends State<Terms> {
                     ),
                     Text(
                       '이용약관',
-                      style: TextStyle(color: Colors.white, fontSize: 35),
+                      style: TextStyle(color: Colors.white, fontSize: 18),
                     ),
                     SizedBox(
                       height: 30,
@@ -72,7 +80,7 @@ class _TermsState extends State<Terms> {
                     ),
                     Text(
                       '개인정보 처리방침',
-                      style: TextStyle(color: Colors.white, fontSize: 35),
+                      style: TextStyle(color: Colors.white, fontSize: 18),
                     ),
                     SizedBox(
                       height: 30,
@@ -102,6 +110,48 @@ class _TermsState extends State<Terms> {
                 flex: 5,
               ),
             ],
+          ),
+          GestureDetector(
+            onTap: () {
+              setState(() {
+                if (_allChecked = false) {
+                  _allChecked = true;
+                  _infoChecked = true;
+                  _termChecked = true;
+                } else if (_allChecked = true) {
+                  _allChecked = false;
+                  _infoChecked = false;
+                  _termChecked = false;
+                }
+              });
+            },
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                const Text(
+                  '모두 동의합니다.',
+                  style: TextStyle(
+                    fontSize: 20,
+                    color: Colors.white,
+                  ),
+                ),
+                Theme(
+                  data: ThemeData(
+                    primarySwatch: Colors.grey,
+                    unselectedWidgetColor: Colors.white,
+                  ), // Your color,
+                  child: Checkbox(
+                      value: _allChecked,
+                      onChanged: (value) {
+                        setState(() {
+                          _allChecked = value!;
+                          _infoChecked = value;
+                          _termChecked = value;
+                        });
+                      }),
+                ),
+              ],
+            ),
           ),
         ],
       ),

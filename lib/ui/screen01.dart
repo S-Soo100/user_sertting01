@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:user_setting001/ui/customer_service.dart';
+import 'package:user_setting001/web_viewer/customer_service.dart';
 import 'package:user_setting001/ui/screen02.dart';
+import 'package:user_setting001/ui/terms2.dart';
 import 'button_ui.dart';
 import 'terms.dart';
 
@@ -44,11 +45,20 @@ class Screen01 extends StatelessWidget {
                     }),
             const SizedBox(),
             NaviButtons(
-              buttonName: '이용약관 및 개인정보 처리 방침',
+              buttonName: '이용약관 및 개인정보 처리 방침1',
               onPressed: () => {
                 Navigator.of(context)
                     .push(MaterialPageRoute(builder: (_) => Terms())),
-                print('이용약관 및 개인정보 처리 방침')
+                print('이용약관 및 개인정보 처리 방침1')
+              },
+            ),
+            const SizedBox(),
+            NaviButtons(
+              buttonName: '이용약관 및 개인정보 처리 방침2',
+              onPressed: () => {
+                Navigator.of(context)
+                    .push(MaterialPageRoute(builder: (_) => Terms2())),
+                print('이용약관 및 개인정보 처리 방침1')
               },
             ),
             const SizedBox(),
