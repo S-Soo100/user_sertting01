@@ -42,6 +42,10 @@ class Screen03 extends StatelessWidget {
                   initialUserValue: '010-0000-0000',
                 ),
                 GenderDropdown(), //성별 선택 드롭다운
+                MyDropdownBox(
+                    boxName: 'Your Gender',
+                    UserValue: 'Male',
+                    valueList: ['Male', 'Female']),
                 const MyTextBox(
                   boxName: '체중',
                   initialUserValue: '85',

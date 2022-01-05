@@ -11,13 +11,11 @@ class Screen02 extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: const Color(0xff222222),
+      appBar: AppBar(),
       body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           children: [
-            const SizedBox(),
-            const SizedBox(),
-            const SizedBox(),
             const SizedBox(),
             NaviButtons(
               buttonName: '개인 정보 수정',
@@ -55,9 +53,6 @@ class Screen02 extends StatelessWidget {
               buttonName: '회원 탈퇴',
               onPressed: () => print('회원 탈퇴'),
             ),
-            const SizedBox(),
-            const SizedBox(),
-            const SizedBox(),
             const SizedBox(),
           ],
         ),
