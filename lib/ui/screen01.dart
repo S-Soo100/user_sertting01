@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:user_setting001/ui/signup_serialcheck.dart';
 import 'package:user_setting001/web_viewer/customer_service.dart';
 import 'package:user_setting001/ui/screen02.dart';
 import 'package:user_setting001/ui/terms2.dart';
@@ -32,9 +33,12 @@ class Screen01 extends StatelessWidget {
             ),
             const SizedBox(),
             NaviButtons(
-              buttonName: '블루투스 재설정',
-              onPressed: () => print('블루투스 재설정'),
-            ),
+                buttonName: '시리얼 넘버 입력',
+                onPressed: () => {
+                      Navigator.of(context).push(
+                          MaterialPageRoute(builder: (_) => SerialNumCheck())),
+                      print('시리얼 번호 입력'),
+                    }),
             const SizedBox(),
             NaviButtons(
                 buttonName: '고객 센터',

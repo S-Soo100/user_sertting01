@@ -11,10 +11,22 @@ class Terms2 extends StatefulWidget {
 }
 
 class _Terms2State extends State<Terms2> {
+  bool _allChecked = false;
+
   bool _termChecked = false;
   bool _infoChecked = false;
   bool _marketingChecked = false;
-  bool _allChecked = false;
+
+  void checkAllChecked() {
+    if (_infoChecked == true &&
+        _marketingChecked == true &&
+        _termChecked == true) {
+      _allChecked = true;
+    } else {
+      _allChecked = false;
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -93,6 +105,7 @@ class _Terms2State extends State<Terms2> {
                           onChanged: (value) {
                             setState(() {
                               _termChecked = value!;
+                              checkAllChecked();
                             });
                           }),
                     ),
@@ -136,7 +149,7 @@ class _Terms2State extends State<Terms2> {
                 height: 10,
               ),
               Container(
-                padding: EdgeInsets.fromLTRB(0, 2, 6, 2),
+                padding: EdgeInsets.all(6),
                 height: 100,
                 width: 460,
                 decoration: BoxDecoration(
@@ -180,6 +193,7 @@ class _Terms2State extends State<Terms2> {
                           onChanged: (value) {
                             setState(() {
                               _infoChecked = value!;
+                              checkAllChecked();
                             });
                           }),
                     ),
@@ -260,6 +274,7 @@ class _Terms2State extends State<Terms2> {
                           onChanged: (value) {
                             setState(() {
                               _marketingChecked = value!;
+                              checkAllChecked();
                             });
                           }),
                     ),
